@@ -1,12 +1,15 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import android.widget.Button
+import android.widget.Toast.LENGTH_LONG
+import android.widget.Toast.makeText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,5 +25,12 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        //Lev's code
+        val temporary_button = findViewById<Button>(R.id.temporary_button)
+
+        //handle button click
+        temporary_button.setOnClickListener{
+            makeText(this, "You clicked the button", LENGTH_LONG).show()
+        }
     }
 }
